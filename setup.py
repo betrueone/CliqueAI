@@ -29,7 +29,8 @@ def read_requirements(path):
         return processed_requirements
 
 
-requirements = read_requirements("requirements.txt")
+# requirements = read_requirements("requirements.txt")
+requirements = []
 here = path.abspath(path.dirname(__file__))
 
 with open(path.join(here, "README.md"), encoding="utf-8") as f:

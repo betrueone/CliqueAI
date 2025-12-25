@@ -107,13 +107,14 @@ class BaseMinerNeuron(BaseNeuron):
                 # Sync metagraph and potentially set weights.
                 self.sync()
                 self.step += 1
-                time.sleep(12)
+                time.sleep(5)
 
         # If someone intentionally stops the miner, it'll safely terminate operations.
         except KeyboardInterrupt:
             self.axon.stop()
             bt.logging.success("Miner killed by keyboard interrupt.")
             self.should_exit = True
+            exit()
 
         # In case of unforeseen errors, the miner will log the error and continue operations.
         except Exception as e:

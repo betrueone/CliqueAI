@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CliqueAI"
+version = "0.0.6"
+description = "CliqueAI"
+authors = [
+    {name = "toptensor", email = "toptensor@toptensor.ai"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "starlette>=0.30.0",
+    "pydantic>=2",
+    "rich>=13",
+    "pytest>=8",
+    "numpy>=2.2.6",
+    "setuptools>=68",
+    "networkx==3.4.2",
+    "substrate-interface",
+    "bittensor>=9.10.0",
+    "bittensor-cli",
+    "httpx",
+    "scipy==1.15.3",
+    "PyYAML==6.0.2",
+    "torch==2.7.1",
+    "torch-geometric==2.6.1",
+    "igraph",
+    "cliquematch>=3.0.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/toptensor/CliqueAI"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["CliqueAI*", "common*"]
+
+[tool.uv]
+# UV-specific configuration
+dev-dependencies = [
+    "pytest>=8",
+]
+
