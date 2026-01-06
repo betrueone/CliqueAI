@@ -79,7 +79,9 @@ def pmc_algorithm(number_of_nodes: int, adjacency_list: list[list[int]]) -> list
     ei = np.array(ei, dtype=np.int32)
     ej = np.array(ej, dtype=np.int32)
 
-    return list(pmc(ei, ej))
+    # Convert numpy array to list of Python ints for JSON serialization
+    result = pmc(ei, ej)
+    return [int(x) for x in result]
 
 def is_valid_maximum_clique(number_of_nodes: int, adjacency_list: list[list[int]], nodes: list[int]) -> bool:
     """
